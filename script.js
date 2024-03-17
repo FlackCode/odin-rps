@@ -1,119 +1,101 @@
 let introck = document.getElementById(`rock`);
 let intpaper = document.getElementById(`paper`);;
 let intscissors = document.getElementById(`scissors`);;
-let aiinput;
 let playerchoice = document.getElementById(`playerchoice`);
 let aichoice = document.getElementById(`aichoice`);
 let result = document.getElementById(`result`);
 let score = 0;
-let scoretext = document.getElementById(`score`);
-function gameReset(){
-    setTimeout(() =>{
-        result.textContent = `Resetting in 3...`;
-    }, 2000)
-    setTimeout(() =>{
-        result.textContent = `Resetting in 2...`;
-    }, 3000)
-    setTimeout(() =>{
-        result.textContent = `Resetting in 1...`;
-    }, 4000)
-    setTimeout(() => {
-        result.textContent = 'Game Reset!';
-        playerchoice.textContent = `x`;
-        aichoice.textContent = `x`;
-      }, 5000);
+let playerscoretext = document.getElementById(`playerscore`);
+let aiscoretext = document.getElementById(`aiscore`);
+let aiscore = 0;
+let playerChoiceValue;
+function scoreFunc(){
+    if (score === 5 || aiscore === 5) {
+        console.log(score);
+        console.log(aiscore);
+        endScreen();
+    }
 }
-function disableButtons(){
-    introck.disabled = true;
-    intpaper.disabled = true;
-    intscissors.disabled = true;
+function endScreen() {
+    document.getElementById(`end-screen`).style.zIndex = `2`;
+    const titleText = document.getElementById("titleText");
+    titleText.textContent = (score == 5) ? "You Won!" : "You Lost!";
 }
-function enableButtons(){
-    setTimeout(() => {
-        introck.disabled = false;
-        intpaper.disabled = false;
-        intscissors.disabled = false;
-      }, 5000);
+function restartPage() {
+    location.reload();
 }
-
+function buttonOutput(button, PlayerValue){
+    const buttonvalue = button.value;
+    AiValue = Math.floor(Math.random()*3+1);
+    PlayerValue = Number(buttonvalue);
+    return { AiValue, PlayerValue };
+}
 function rockOut(){
-    disableButtons();
-    rockvalue = introck.value;
-    aiinput = Math.floor(Math.random()*3+1);
-    console.log(rockvalue);
-    let playerChoiceValue = Number(rockvalue);
-    
-    if(playerChoiceValue == 1 && aiinput == 2){
+    const { AiValue, PlayerValue } = buttonOutput(introck, playerChoiceValue);
+    if(PlayerValue == 1 && AiValue == 2){
         playerchoice.textContent = `Rock!`;
         aichoice.textContent = `Paper!`;
         result.textContent = 'You lose!';
+        aiscore++;
+        aiscoretext.textContent = `AI Score: ${aiscore}`;
     }
-    else if(playerChoiceValue == 1 && aiinput == 1){
+    else if(PlayerValue == 1 && AiValue == 1){
         playerchoice.textContent = `Rock!`;
         aichoice.textContent = `Rock!`;
         result.textContent = 'Tie!';
     }
-    else if (playerChoiceValue == 1 && aiinput == 3){
+    else if (PlayerValue == 1 && AiValue == 3){
         playerchoice.textContent = `Rock!`;
         aichoice.textContent = `Scissors!`;
         result.textContent = 'You win!';
         score++;
-        scoretext.textContent = `Score: ${score}`;
+        playerscoretext.textContent = `Your Score: ${score}`;
     }
-    gameReset();
-    enableButtons()
+    scoreFunc();
 }
 function paperOut(){
-    disableButtons();
-    papervalue = intpaper.value;
-    aiinput = Math.floor(Math.random()*3+1);
-    console.log(papervalue);
-    let playerChoiceValue = Number(papervalue);
-    
-    if(playerChoiceValue == 2 && aiinput == 2){
+    const { AiValue, PlayerValue } = buttonOutput(intpaper, playerChoiceValue);
+    if(PlayerValue == 2 && AiValue == 2){
         playerchoice.textContent = `Paper!`;
         aichoice.textContent = `Paper!`;
         result.textContent = 'Tie!';
     }
-    else if(playerChoiceValue == 2 && aiinput == 1){
+    else if(PlayerValue == 2 && AiValue == 1){
         playerchoice.textContent = `Paper!`;
         aichoice.textContent = `Rock!`;
         result.textContent = 'You win!';
         score++;
-        scoretext.textContent = `Score: ${score}`;
+        playerscoretext.textContent = `Your Score: ${score}`;
     }
-    else if (playerChoiceValue == 2 && aiinput == 3){
+    else if (PlayerValue == 2 && AiValue == 3){
         playerchoice.textContent = `Paper!`;
         aichoice.textContent = `Scissors!`;
         result.textContent = 'You lose!';
+        aiscore++;
+        aiscoretext.textContent = `AI Score: ${aiscore}`;
     }
-    gameReset();
-    enableButtons()
+    scoreFunc();
 }
 function scissorOut(){
-    disableButtons();
-    scissorsvalue = intscissors.value;
-    aiinput = Math.floor(Math.random()*3+1);
-    console.log(scissorsvalue);
-    let playerChoiceValue = Number(scissorsvalue);
-    
-    if(playerChoiceValue == 3 && aiinput == 2){
+    const { AiValue, PlayerValue } = buttonOutput(intscissors, playerChoiceValue);
+    if(PlayerValue == 3 && AiValue == 2){
         playerchoice.textContent = `Scissors!`;
         aichoice.textContent = `Paper!`;
         result.textContent = 'You win!';
         score++;
-        scoretext.textContent = `Score: ${score}`;
+        playerscoretext.textContent = `Your Score: ${score}`;
     }
-    else if(playerChoiceValue == 3 && aiinput == 1){
+    else if(PlayerValue == 3 && AiValue == 1){
         playerchoice.textContent = `Scissors!`;
         aichoice.textContent = `Rock!`;
         result.textContent = 'You lose!';
+        aiscore++;
+        aiscoretext.textContent = `AI Score: ${aiscore}`;
     }
-    else if (playerChoiceValue == 3 && aiinput == 3){
+    else if (PlayerValue == 3 && AiValue == 3){
         playerchoice.textContent = `Scissors!`;
         aichoice.textContent = `Scissors!`;
         result.textContent = 'Tie!';
     }
-    gameReset();
-    enableButtons()
+    scoreFunc();
 }

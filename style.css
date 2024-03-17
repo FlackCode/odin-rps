@@ -19,10 +19,13 @@ body{
     width: 25rem; 
     height: 25rem; 
     background-color: #353535;
-    border: 2px solid #dd0bcc;
+    border: 0.3rem solid #dd0bcc;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    z-index: 1;
 }
 .player-options{
     display: flex;
@@ -36,6 +39,7 @@ body{
     font-weight: bolder;
     background-color: #353535;
     border: 2px solid #dd0bcc;
+    border-radius: 0.5rem;
     transition: 500ms;
     cursor: pointer;
 }
@@ -45,6 +49,7 @@ body{
 .game-window{
     padding: 1rem 2rem;
     border: 2px solid #dd0bcc;
+    border-radius: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -63,4 +68,37 @@ body{
     width: 6rem;
     height: 6rem;
     border: 1px #dd0bcc solid;
+}
+.end-container{
+    padding: 2rem;
+    width: 25rem; 
+    height: 25rem; 
+    background-color: #353535;
+    border: 0.3rem solid #dd0bcc;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 50; 
+    left: 50; 
+}
+.end-container h1{
+    font-size: 5rem;
+}
+.end-container button{
+    text-align: center;
+    height: 3rem;
+    font-weight: bolder;
+    background-color: #353535;
+    border: 2px solid #dd0bcc;
+    border-radius: 0.5rem;
+    transition: 500ms;
+    cursor: pointer;
+}
+.end-container button:hover{
+    background-color: #252525;
+}
+#end-screen{
+    z-index: 0; 
 }

@@ -7,8 +7,9 @@
     <title>Website</title>
 </head>
 <body>
-    <div class="container">
-        <div class="title"><h1>!Rock Paper Scissors!</h1></div>
+    <div class="container" id="game-container">
+        <div class="title"><h1>Rock Paper Scissors</h1></div>
+        <p>First to reach 5 score wins!</p>
         <div class="game-title">
             <h1>Select Your Move:</h1>
         </div>
@@ -25,7 +26,7 @@
                         <p id="playerchoice"></p>
                     </div>
                 </div>
-                <h1 id="score">Your Score: 0</h1>
+                <h1 id="playerscore">Your Score: 0</h1>
             </div>
             <div class="game-box">
                 <h1>Ai:</h1>
@@ -40,6 +41,10 @@
         <div class="result">
             <h1 id="result">Results:</h1>
         </div>
+    </div>
+    <div class="end-container" id="end-screen">
+        <h1 id="titleText">You Won!</h1>
+        <button id="restartBtn" onclick="restartPage()">Play Again</button>
     </div>
     <script src="script.js"></script>
 </body>
