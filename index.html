@@ -18,26 +18,27 @@
             <button id="scissors" value=3 onclick="scissorOut()">Scissors</button>
         </div>
         <div class="game-window">
-            <div class="game-text">
+            <div class="game-box">
                 <h1>You:</h1>
-                <h1>Ai:</h1>
-            </div>
-            <div class="choice-squares">
                 <div class="square">
                     <div class="square-text">
                         <p id="playerchoice"></p>
                     </div>
                 </div>
+                <h1 id="score">Your Score: 0</h1>
+            </div>
+            <div class="game-box">
+                <h1>Ai:</h1>
                 <div class="square">
                     <div class="square-text">
                         <p id="aichoice"></p>
                     </div>
                 </div>
+                <h1 id="aiscore">AI Score: 0</h1>
             </div>
         </div>
         <div class="result">
             <h1 id="result">Results:</h1>
-            <h1 id="score">Score: 0</h1>
         </div>
     </div>
     <script src="script.js"></script>

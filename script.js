@@ -35,6 +35,7 @@ function enableButtons(){
         intscissors.disabled = false;
       }, 5000);
 }
+
 function rockOut(){
     disableButtons();
     rockvalue = introck.value;

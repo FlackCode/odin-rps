@@ -4,6 +4,7 @@
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: rgb(255, 242, 242);
+    text-align: center;
 }
 body{
     background-color: #000000bb;
@@ -22,13 +23,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-.title{
-    text-align: center;
-}
-.game-title{
-    text-align: center;
-    padding: 0.5rem;
 }
 .player-options{
     display: flex;
@@ -49,24 +43,16 @@ body{
     background-color: #252525;
 }
 .game-window{
-    text-align: center;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border: 2px solid #dd0bcc;
-}
-.game-window h1{
-    padding-bottom: 1rem;
-}
-.game-text{
-    padding: 0rem 2rem 0rem 2rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
-.choice-squares{
-    padding: 0rem 2rem 0rem 2rem;
+.game-box{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 .square{
     display: flex;
@@ -77,8 +63,4 @@ body{
     width: 6rem;
     height: 6rem;
     border: 1px #dd0bcc solid;
-}
-.result{
-    text-align: center;
-    
 }
