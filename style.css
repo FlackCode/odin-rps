@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: rgb(255, 242, 242);
+}
+body{
+    background-color: #000000bb;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.container{
+    padding: 2rem;
+    width: 25rem; 
+    height: 25rem; 
+    background-color: #353535;
+    border: 2px solid #dd0bcc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.title{
+    text-align: center;
+}
+.game-title{
+    text-align: center;
+    padding: 0.5rem;
+}
+.player-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.player-options button{
+    text-align: center;
+    height: 3rem;
+    width: 5rem;
+    font-weight: bolder;
+    background-color: #353535;
+    border: 2px solid #dd0bcc;
+    transition: 500ms;
+    cursor: pointer;
+}
+.player-options button:hover{
+    background-color: #252525;
+}
+.game-window{
+    text-align: center;
+    padding: 1rem;
+    border: 2px solid #dd0bcc;
+}
+.game-window h1{
+    padding-bottom: 1rem;
+}
+.game-text{
+    padding: 0rem 2rem 0rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.choice-squares{
+    padding: 0rem 2rem 0rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.square{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    width: 6rem;
+    height: 6rem;
+    border: 1px #dd0bcc solid;
+}
+.result{
+    text-align: center;
+    
+}
